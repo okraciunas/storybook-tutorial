@@ -1,8 +1,10 @@
 # storybook-tutorial
 
-Projeto de estudo do Storybook, utilizando o [tutorial da própria ferramenta](https://www.learnstorybook.com/intro-to-storybook/react/pt/get-started/).
+Projeto de estudo do `Storybook`, utilizando o [tutorial da própria ferramenta](https://www.learnstorybook.com/intro-to-storybook/react/pt/get-started/).
 
-### Instando dependências
+Aplicação criada utilizando `create-react-app` para integração de componente `React` + `Storybook`.
+
+### Instalando dependências
 
 ```sh
 $ yarn install
