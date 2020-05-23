@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export const TaskState = {
-  TASK_PINNED: "TASK_PINNED",
   TASK_INBOX: "TASK_INBOX",
+  TASK_PINNED: "TASK_PINNED",
   TASK_ARCHIVED: "TASK_ARCHIVED",
 };
 

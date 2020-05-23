@@ -1,4 +1,7 @@
 import React from "react";
+import { Provider } from "react-redux";
+
+import store from "./../../store";
 
 import TaskList from "./";
 import { TaskState } from "./../Task";
@@ -26,13 +29,25 @@ export const withPinnedTasksData = [
 ];
 
 export const Default = () => (
-  <TaskList tasks={defaultTasksData} {...actionsData} />
+  <Provider store={store}>
+    <TaskList tasks={defaultTasksData} {...actionsData} />
+  </Provider>
 );
 
 export const WithPinnedTasks = () => (
-  <TaskList tasks={withPinnedTasksData} {...actionsData} />
+  <Provider store={store}>
+    <TaskList tasks={withPinnedTasksData} {...actionsData} />
+  </Provider>
 );
 
-export const Loading = () => <TaskList loading tasks={[]} {...actionsData} />;
+export const Loading = () => (
+  <Provider store={store}>
+    <TaskList loading tasks={[]} {...actionsData} />;
+  </Provider>
+);
 
-export const Empty = () => <TaskList tasks={[]} {...actionsData} />;
+export const Empty = () => (
+  <Provider store={store}>
+    <TaskList tasks={[]} {...actionsData} />;
+  </Provider>
+);
