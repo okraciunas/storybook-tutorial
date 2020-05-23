@@ -4,10 +4,24 @@ import { withKnobs, object } from "@storybook/addon-knobs";
 
 import Task, { TaskState } from "./";
 
+import path from "path";
+
+const teste = path.resolve(
+  __dirname,
+  "..",
+  "..",
+  "public",
+  "designs",
+  "app.png"
+);
+
 export default {
   component: Task,
   title: "Task",
   decoratores: [withKnobs],
+  parameters: {
+    assets: [teste],
+  },
   excludeStories: /.*Data$/,
 };
 

@@ -1759,7 +1759,7 @@
     global "^4.3.2"
     util-deprecate "^1.0.2"
 
-"@storybook/api@5.3.18":
+"@storybook/api@5.3.18", "@storybook/api@^5.3.18":
   version "5.3.18"
   resolved "https://registry.yarnpkg.com/@storybook/api/-/api-5.3.18.tgz#95582ab90d947065e0e34ed603650a3630dcbd16"
   integrity sha512-QXaccNCARHzPWOuxYndiebGWBZmwiUvRgB9ji0XTJBS3y8K0ZPb5QyuqiKPaEWUj8dBA8rzdDtkW3Yt95Namaw==
@@ -1833,7 +1833,7 @@
   dependencies:
     core-js "^3.0.1"
 
-"@storybook/components@5.3.18":
+"@storybook/components@5.3.18", "@storybook/components@^5.3.18":
   version "5.3.18"
   resolved "https://registry.yarnpkg.com/@storybook/components/-/components-5.3.18.tgz#528f6ab1660981e948993a04b407a6fad7751589"
   integrity sha512-LIN4aVCCDY7klOwtuqQhfYz4tHaMADhXEzZpij+3r8N68Inck6IJ1oo9A9umXQPsTioQi8e6FLobH1im90j/2A==
