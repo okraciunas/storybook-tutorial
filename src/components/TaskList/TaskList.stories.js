@@ -53,12 +53,12 @@ export const WithPinnedTasks = () => (
 
 export const Loading = () => (
   <Provider store={createStore([])}>
-    <TaskList loading tasks={[]} {...actionsData} />;
+    <TaskList loading tasks={[]} {...actionsData} />
   </Provider>
 );
 
 export const Empty = () => (
   <Provider store={createStore([])}>
-    <TaskList tasks={[]} {...actionsData} />;
+    <TaskList tasks={[]} {...actionsData} />
   </Provider>
 );
