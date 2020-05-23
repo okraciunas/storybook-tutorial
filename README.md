@@ -23,3 +23,7 @@ O projeto irá rodar em `localhost` na porta `9009`: [http://localhost:9009](htt
 ```sh
 $ yarn test
 ```
+
+### URL
+
+O resultado da aplicação está hospedado no Netlify: https://okraciunas-storybook-tutorial.netlify.app
