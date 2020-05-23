@@ -1,7 +1,6 @@
 import React from "react";
+import { action } from "@storybook/addon-actions";
 import { Provider } from "react-redux";
-
-import store from "./../../store";
 
 import TaskList from "./";
 import { TaskState } from "./../Task";
@@ -28,26 +27,38 @@ export const withPinnedTasksData = [
   { id: "6", title: "Task 6 (pinned)", state: TaskState.TASK_PINNED },
 ];
 
+function createStore(tasks) {
+  return {
+    getState: () => {
+      return {
+        tasks,
+      };
+    },
+    subscribe: () => 0,
+    dispatch: action("dispatch"),
+  };
+}
+
 export const Default = () => (
-  <Provider store={store}>
+  <Provider store={createStore(defaultTasksData)}>
     <TaskList tasks={defaultTasksData} {...actionsData} />
   </Provider>
 );
 
 export const WithPinnedTasks = () => (
-  <Provider store={store}>
+  <Provider store={createStore(withPinnedTasksData)}>
     <TaskList tasks={withPinnedTasksData} {...actionsData} />
   </Provider>
 );
 
 export const Loading = () => (
-  <Provider store={store}>
+  <Provider store={createStore([])}>
     <TaskList loading tasks={[]} {...actionsData} />;
   </Provider>
 );
 
 export const Empty = () => (
-  <Provider store={store}>
+  <Provider store={createStore([])}>
     <TaskList tasks={[]} {...actionsData} />;
   </Provider>
 );

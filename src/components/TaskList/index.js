@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
 
-import Task, { TaskState } from "../Task";
+import Task from "./../Task";
+import { connect } from "react-redux";
 import { archiveTask, pinTask } from "./../../store";
 
 export function TaskList({ loading, tasks, onPinTask, onArchiveTask }) {
@@ -11,16 +11,16 @@ export function TaskList({ loading, tasks, onPinTask, onArchiveTask }) {
     onArchiveTask,
   };
 
-  if (loading) {
-    const LoadingRow = (
-      <div className="loading-item">
-        <span className="glow-checkbox" />
-        <span className="glow-text">
-          <span>Loading</span> <span>cool</span> <span>state</span>
-        </span>
-      </div>
-    );
+  const LoadingRow = (
+    <div className="loading-item">
+      <span className="glow-checkbox" />
+      <span className="glow-text">
+        <span>Loading</span> <span>cool</span> <span>state</span>
+      </span>
+    </div>
+  );
 
+  if (loading) {
     return (
       <div className="list-items">
         {LoadingRow}
@@ -46,8 +46,8 @@ export function TaskList({ loading, tasks, onPinTask, onArchiveTask }) {
   }
 
   const tasksInOrder = [
-    ...tasks.filter((t) => t.state === TaskState.TASK_PINNED),
-    ...tasks.filter((t) => t.state !== TaskState.TASK_PINNED),
+    ...tasks.filter((t) => t.state === "TASK_PINNED"),
+    ...tasks.filter((t) => t.state !== "TASK_PINNED"),
   ];
 
   return (
@@ -73,8 +73,7 @@ TaskList.defaultProps = {
 export default connect(
   ({ tasks }) => ({
     tasks: tasks.filter(
-      (t) =>
-        t.state === TaskState.TASK_INBOX || t.state === TaskState.TASK_PINNED
+      (t) => t.state === "TASK_INBOX" || t.state === "TASK_PINNED"
     ),
   }),
   (dispatch) => ({
